@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Maxit - Étape 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-2xl p-6 m-4">
+        <div class="text-center mb-6">
+            <span class="bg-orange-600 text-white font-bold px-3 py-1 rounded-lg text-sm">Étape 4 sur 8</span>
+            <h1 class="text-xl font-bold text-gray-800 mt-2">Situation Professionnelle</h1>
+        </div>
+        <form id="form4" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Secteur d'activité</label>
+                <select name="sector" class="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-orange-500">
+                    <option value="salarie">Salarié(e)</option>
+                    <option value="entrepreneur">Entrepreneur / Commerçant(e)</option>
+                    <option value="liberale">Profession Libérale</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg shadow">Continuer</button>
+        </form>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('form4').addEventListener('submit', (e) => {
+            e.preventDefault();
+            params.set('sector', document.querySelector('select[name="sector"]').value);
+            const url = new URL('page5.html', window.location.origin);
+            url.search = params.toString();
+            window.location.href = url.toString();
+        });
+    </script>
+</body>
+</html>
