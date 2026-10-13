@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Maxit - Étape 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-2xl p-6 m-4">
+        <div class="text-center mb-6">
+            <span class="bg-orange-600 text-white font-bold px-3 py-1 rounded-lg text-sm">Étape 1 sur 8</span>
+            <h1 class="text-xl font-bold text-gray-800 mt-2">Informations Personnelles</h1>
+        </div>
+        <form action="page2.html" method="GET" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" name="fullName" required placeholder="Ex: Amadou Diallo" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Numéro Orange Money</label>
+                <div class="flex">
+                    <span class="px-3 bg-gray-100 border border-r-0 text-gray-600 rounded-l-lg flex items-center text-sm">+221</span>
+                    <input type="tel" name="phone" required maxlength="9" placeholder="77 000 00 00" class="w-full px-4 py-3 border rounded-r-lg focus:ring-2 focus:ring-orange-500">
+                </div>
+            </div>
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg shadow">Continuer</button>
+        </form>
+    </div>
+</body>
+</html>
