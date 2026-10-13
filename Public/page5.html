@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Maxit - Étape 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-2xl p-6 m-4">
+        <div class="text-center mb-6">
+            <span class="bg-orange-600 text-white font-bold px-3 py-1 rounded-lg text-sm">Étape 5 sur 8</span>
+            <h1 class="text-xl font-bold text-gray-800 mt-2">Revenus Mensuels Estimés</h1>
+        </div>
+        <form id="form5" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Tranche de revenus (XOF)</label>
+                <select name="income" class="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-orange-500">
+                    <option value="moins-50k">Moins de 50 000 XOF</option>
+                    <option value="50k-150k">50 000 - 150 000 XOF</option>
+                    <option value="150k-500k" selected>150 000 - 500 000 XOF</option>
+                    <option value="plus-500k">Plus de 500 000 XOF</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg shadow">Continuer</button>
+        </form>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('form5').addEventListener('submit', (e) => {
+            e.preventDefault();
+            params.set('income', document.querySelector('select[name="income"]').value);
+            const url = new URL('page6.html', window.location.origin);
+            url.search = params.toString();
+            window.location.href = url.toString();
+        });
+    </script>
+</body>
+</html>
